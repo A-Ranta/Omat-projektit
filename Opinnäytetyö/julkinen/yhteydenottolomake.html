@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<!--Metatiedot-->
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Opinnäytetyö</title>
+</head>
+
+<body class="flex flex-col text-center items-center">
+
+    <!--Header osio-->
+    <header class="container grid grid-cols-3 items-center bg-gray-300">
+
+        <!--Logo-->
+        <section class="p-10">
+        <img class="object-contain size-auto" src="/Opinnäytetyö/kuvat/GameRent.png"
+        alt="GameRent yrityksen logo">
+        </section>
+
+        <!--Sivuston infot-->
+        <section>
+            <h1 class="text-5xl font-bold">GameRent</h1>
+            <p class="pb-6">Pelaajan valinta</p>
+            <nav class="">
+                <a href="katalogi.html"
+                class="inline-block hover:underline text-gray bg-blue-100 rounded w-32">    
+                    Katalogi
+                </a>
+        </nav>
+        </section>
+    </header>
+
+    <!--Main osio-->
+    <main class="container">
+        <h2 class="text-3xl font-bold">Yhteydenottolomake</h2>
+        <p>Jätä kysymyksesi alla olevalla lomakkeella ja henkilökunta vastaa sinulle mahdollisimman pian</p>
+
+        <!--Lomake-->
+      <form class="flex flex-col items-center p-6" novalidate>
+
+        <label for="nimi">Nimi tai nimimerkkisi</label>
+        <input class="border border-solid border-black"
+         type="text" name="nimi" id="nimi" required>
+         <p class="text-sm pb-6">Lisää nimesi tai nimimerkkisi</p>
+
+        <label for="email">Sähköpostiosoite</label>
+        <input class="border border-solid border-black"
+         type="email" name="email" required>
+         <p class="text-sm pb-6">Lisää voimassaoleva sähköpostiosoite</p>
+
+        <label for="viesti">Viesti</label>
+        <textarea class="border border-solid border-black"
+         name="viesti" rows="5" cols="50"></textarea>
+         <p class="text-sm pb-6">Kirjoita viestisi tänne</p>
+
+        <button class="bg-gray-400 rounded w-32">Lähetä</button>
+        
+      </form>
+    </main>
+
+
+    <!--Footer osio-->
+    <footer class="container grid grid-cols-3 bg-gray-300">
+
+    <!--Yrityksen tiedot-->
+    <section>
+        <h2 class="text-3xl font-bold pb-6">GameRent</h2>
+        <p>Kaupunki</p>
+        <p>Osoite</p>
+        <p>Avoinna:</p>
+        <p>Ma-Pe: 10-18</p>
+        <p>La: 12-16</p>
+        <p>Su: Suljettu</p>
+    </section>
+
+        <section>
+            <h2 class="text-3xl font-bold pb-6">Kysyttävää?</h2>
+            <p>Jätä viesti tai pelitoive</p>
+            <a href="yhteydenottolomake.html"
+            class="inline-block hover:underline text-gray bg-blue-100 rounded w-32">
+            Ota yhteyttä</a>
+            </section>
+
+
+            <section>
+            <h2 class="text-3xl font-bold pb-6">Tekijänoikeus</h2>
+            <p>@Antti Ranta</p>
+            </section>
+        
+    </footer>
+
+</body>
+</html>
