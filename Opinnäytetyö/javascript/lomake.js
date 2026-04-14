@@ -73,15 +73,16 @@ function isFormEmailValid(value) {
 
 /*luo tekstikenttäsyöte
 function createFormTextareaInput(container) {
-    const input = document.createElement("textarea");
+    const textarea = document.createElement("textarea");
 
-    input.id = "tekstikenttä";
-    input.name = "tekstikenttä";
-    input.type = "text";
-    input.placeholder = "kirjoita viestisi tänne";
+    textarea.id = "tekstikenttä";
+    textarea.name = "tekstikenttä";
+    textarea.type = "text";
+    textarea.rows ="5";
+    text.placeholder = "kirjoita viestisi tänne";
 
-    container.appendChild(input);
-    return input;
+    container.appendChild(textarea);
+    return textarea;
 }*/
 
 
