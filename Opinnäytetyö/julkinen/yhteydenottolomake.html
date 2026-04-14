@@ -8,6 +8,8 @@
     <title>Opinnäytetyö</title>
 </head>
 
+    <script src="lomake.js" defer></script>
+
 <body class="flex flex-col text-center items-center">
 
     <!--Header osio-->
@@ -24,7 +26,7 @@
             <h1 class="text-5xl font-bold">GameRent</h1>
             <p class="pb-6">Pelaajan valinta</p>
             <nav class="">
-                <a href="katalogi.html"
+                <a href="katalogiversio2.html"
                 class="inline-block hover:underline text-gray bg-blue-100 rounded w-32">    
                     Katalogi
                 </a>
@@ -35,27 +37,48 @@
     <!--Main osio-->
     <main class="container">
         <h2 class="text-3xl font-bold">Yhteydenottolomake</h2>
-        <p>Jätä kysymyksesi alla olevalla lomakkeella ja henkilökunta vastaa sinulle mahdollisimman pian</p>
+        <p>Jätä kysymyksesi tai pelitoiveesi alla olevalla lomakkeella ja henkilökunta vastaa sinulle mahdollisimman pian</p>
 
         <!--Lomake-->
-      <form class="flex flex-col items-center p-6" novalidate>
+      <form class="flex flex-col items-center p-6" id=yhteydenottolomake
+       novalidate>
 
+        <!--Nimisyöte-->
+        <section>
         <label for="nimi">Nimi tai nimimerkkisi</label>
+        <section id="lomakeNimiKontti"></section>
         <input class="border border-solid border-black"
-         type="text" name="nimi" id="nimi" required>
-         <p class="text-sm pb-6">Lisää nimesi tai nimimerkkisi</p>
+         type="text" name="nimi" id="nimi" 
+         minlength="3" maxlength="25" placeholder="Kirjoita nimi tai nimimerkki"
+         pattern="[A-Za-z0-9äöåÄÖÅ{3,25}]" required>
+         <p class="text-sm pb-6">
+            Lisää nimesi tai nimimerkkisi, pituus 3-25 merkkiä, käytä vain kirjaimia ja numeroita
+        </p>
+        </section>
 
+        <!--Sähköpostisyöte-->
+        <section>
         <label for="email">Sähköpostiosoite</label>
+        <section id="lomakeEmailKontti"></section>
         <input class="border border-solid border-black"
-         type="email" name="email" required>
-         <p class="text-sm pb-6">Lisää voimassaoleva sähköpostiosoite</p>
+         type="email" name="email" id="email" placeholder="esimerkki@email.com" required>
+         <p class="text-sm pb-6">
+            Lisää voimassaoleva sähköpostiosoite
+         </p>
+         </section>
 
-        <label for="viesti">Viesti</label>
+        <!--Tekstikenttäsyöte-->
+        <label for="teskstialue">Viesti</label>
+        <section id =lomakeTekstikenttäKontti></section>
         <textarea class="border border-solid border-black"
-         name="viesti" rows="5" cols="50"></textarea>
-         <p class="text-sm pb-6">Kirjoita viestisi tänne</p>
+         name="tekstialue" type="tekstialue" id="tekstialue" rows="5" cols="50" maxlength="200" part="[A-Za-z0-9äöåÄÖÅ]"
+         placeholder="Kirjoita viesisi tänne" required></textarea>
+         <p class="text-sm pb-6">
+            Kirjoita viestisi tänne, max 200 kirjainta, käytä vain kirjaimia ja numeroita
+        </p>
 
-        <button class="bg-gray-400 rounded w-32">Lähetä</button>
+        <button class="bg-gray-400 rounded w-32"
+        type="submit" id="submitNappi">Lähetä</button>
         
       </form>
     </main>
