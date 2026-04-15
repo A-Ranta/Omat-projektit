@@ -2,27 +2,12 @@
 const lomakeNimiKontti = document.getElementById("lomakeNimiKontti");
 const lomakeEmailKontti = document.getElementById("lomakeEmailKontti");
 const lomakeTekstikenttäKontti = document.getElementById("lomakeTekstikenttäKontti");
+const lomake = document.getElementById("yhteydenottolomake");
 const submitNappi = document.getElementById("submitNappi");
 
+//"Lähetä" nappi on alussa pois päältä
 submitNappi.disabled = true;
 
-/*Lähetä napin avustajat
-const button_Enabled_Class =
-    "bg-brand-primary text-white hover:bg-brand-dark/80 shadow-soft";
-
-const button_Disabled_Class =
-    "cursor-not-allowed opacity-50"
-
-
-function setButtonEnabled(button, enabled) {
-    if (!button) return;
-
-    button.disabled = !enabled;
-
-    button.classList.toggle("cursor-not-allowed", !enabled);
-    button.classList.toggle("opacity-50", !enabled);
-
-}*/
 
 /*luo nimisyöte
 function createFormNameInput(container) {
@@ -59,7 +44,7 @@ function createFormEmailInput(container) {
     container.appendChild(input);
     return input;
 }*/
-    
+
 
 //sähköpostin validointi validointi
 function isFormEmailValid(value) {
@@ -89,13 +74,13 @@ function createFormTextareaInput(container) {
 //tekstikenttäsyötteen validointi
 function isFormTextareaValid(value) {
     const trimmed = value.trim();
-    
+
     const allowedPattern = /^[A-Za-z0-9äöåÄÖÅ]{0,200}$/;
     const lengthValid = trimmed.length >= 0 && trimmed.length <= 200;
     const charactersValid = allowedPattern.test(trimmed);
     return lengthValid && charactersValid;
-    
-   
+
+
 }
 
 
@@ -105,7 +90,28 @@ function setInputVisualState(input, state) {
 
 }
 
+
 //funktio lomakkeen validoinnille
+function validateForm() {
+    lomake.addEventListener("input", function () {
+        if (lomake.checkValidity()) {
+            submitNappi.disabled = false;
+            submitNappi.style.background = "green";
+        } else {
+            submitNappi.disabled = true;
+            submitNappi.style.background = "gray";
+        }
+    });
+
+    //estää lomakkeen lähetyksen ja sivun uudelleenlatauksen
+    lomake.addEventListener("submit", function (e) {
+        e.preventDefault();
+    });
+
+}
+
+validateForm();
+
 
 
 
