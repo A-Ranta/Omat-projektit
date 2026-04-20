@@ -7,10 +7,7 @@
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Opinnäytetyö</title>
-    <script src="lomakkeen validointi.js" defer></script>
 </head>
-
-
 
 <body class="flex flex-col text-center items-center">
 
@@ -29,30 +26,32 @@
         <section>
             <a href="etusivu.html" class="text-5xl font-bold">
                 GameRent</a>
-            <p class="pb-6">Pelaajan valinta</p>
+            <p>Pelaajan valinta</p>
             <nav class="">
-                <a href="katalogiversio2.html" class="inline-block hover:underline text-gray bg-blue-100 rounded w-32">
+                <a href="katalogiversio2.html" class="hover:underline text-gray bg-blue-100 rounded">
                     Katalogi
                 </a>
             </nav>
         </section>
     </header>
 
-    <!--Main osio-->
-    <main class="container">
-        <h2 class="text-3xl font-bold">Yhteydenottolomake</h2>
-        <p>Jätä kysymyksesi tai pelitoiveesi alla olevalla lomakkeella ja henkilökunta vastaa sinulle mahdollisimman
-            pian</p>
+    <!--<h2 class="text-3xl font-bold pt-6 pb-6">Katalogi</h2>-->
 
-        <!--Lomake-->
+    <!--Main osio pelikatalogille-->
+    <main class="container">
+
+        <h2 class="text-3xl font-bold">Tilauslomake</h2>
+        <p>Täytä allaoleva tilauslomake saattaksesi vuokraamisen loppuun
+            
+        </p>
+
         <form class="flex flex-col items-center p-6" id="yhteydenottolomake">
 
             <!--Nimisyöte-->
             <section>
                 <label for="nimi">Nimi tai nimimerkkisi</label>
                 <section id="lomakeNimiKontti"></section>
-                <input class="border border-solid border-black"
-                 type="text" name="nimi" id="nimi" minlength="3"
+                <input class="border border-solid border-black" type="text" name="nimi" id="nimi" minlength="3"
                     maxlength="25" placeholder="Kirjoita nimi tai nimimerkki" pattern="[A-Za-z0-9äöåÄÖÅ]{3,25}"
                     required>
                 <p class="text-sm pb-6">
@@ -71,19 +70,35 @@
                 </p>
             </section>
 
-            <!--Tekstikenttäsyöte-->
-            <label for="tekstialue">Viesti</label>
-            <section id="lomakeTekstikenttäKontti"></section>
-            <textarea class="border border-solid border-black text-center"
-             name="tekstialue" id="tekstialue" rows="5" cols="50"
-                maxlength="200" placeholder="Kirjoita viestisi tänne" required></textarea>
-            <p class="text-sm pb-6">
-                Kirjoita viestisi tänne, max 200 kirjainta, käytä vain kirjaimia ja numeroita
-            </p>
+            <!--Pelivalinta-->
+            <section>
+                <label for="pelivalinta">Pelivalinta</label>
+                <section id="pelivalintakontti"></section>
+                <select class="border border-solid border-black"
+                 name="pelivalinta" id="pelivalinta" required>
+                    <option class="disabled selected hidden">
+                        Valitse vuokrattava peli
+                    </option>
+                    <option value="Resident Evil Requiem">Resident Evil Requiem (PS5)</option>
+                    <option value="Tales Of Berseria">Tales Of Berseria (PS4)</option>
+                    <option value="Skate 3">Skate 3 (Xbox 360)</option>
+                    <option value="No Sleep For Kaname Date">No Sleep For Kaname Date (PS5)</option>
+                    <option value="Resident Evil 2 1998">Resident Evil 2 (1998) (PS1)</option>
+                    <option value="The Witcher">The Witcher 1 (PC)</option>
+                </select>
+            </section>
 
-            <button class="bg-gray-400 rounded w-32" type="submit" id="submitNappi">Lähetä</button>
+            <p class="text-sm pb-6">
+                    Valitse haluamasi peli listalta
+                </p>
+
+            <button class="bg-gray-400 rounded w-32" type="submit" id="submitNappi">
+                Lähetä
+            </button>
 
         </form>
+
+
     </main>
 
 
@@ -92,7 +107,7 @@
 
         <!--Yrityksen tiedot-->
         <section>
-            <h2 class="text-3xl font-bold pb-6">GameRent</h2>
+            <h2 class="text-3xl font-bold">GameRent</h2>
             <p>Kaupunki</p>
             <p>Osoite</p>
             <p>Avoinna:</p>
@@ -102,15 +117,15 @@
         </section>
 
         <section>
-            <h2 class="text-3xl font-bold pb-6">Kysyttävää?</h2>
-            <p>Jätä viesti tai pelitoive</p>
-            <a href="yhteydenottolomake.html" class="inline-block hover:underline text-gray bg-blue-100 rounded w-32">
+            <h2 class="text-3xl font-bold">Kysyttävää?</h2>
+            <p>jätä viesti tai pelitoive</p>
+            <a href="yhteydenottolomake.html" class="hover:underline text-gray bg-blue-100 rounded">
                 Ota yhteyttä</a>
         </section>
 
 
         <section>
-            <h2 class="text-3xl font-bold pb-6">Tekijänoikeus</h2>
+            <h2 class="text-3xl font-bold">Tekijänoikeus</h2>
             <p>@Antti Ranta</p>
         </section>
 
@@ -118,4 +133,4 @@
 
 </body>
 
-</html>
+<
