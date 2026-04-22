@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Opinnäytetyö</title>
+    <script src="lomakkeen validointi.js" defer></script>
 </head>
 
 <body class="flex flex-col text-center items-center">
@@ -45,7 +46,7 @@
             
         </p>
 
-        <form class="flex flex-col items-center p-6" id="yhteydenottolomake">
+        <form class="flex flex-col items-center p-6" id="tilauslomake">
 
             <!--Nimisyöte-->
             <section>
@@ -73,8 +74,8 @@
             <!--Pelivalinta-->
             <section>
                 <label for="pelivalinta">Pelivalinta</label>
-                <section id="pelivalintakontti"></section>
-                <select class="border border-solid border-black"
+                <section id="peliValintaKontti"></section>
+                <select class="border border-solid border-black text-center"
                  name="pelivalinta" id="pelivalinta" required>
                     <option class="disabled selected hidden">
                         Valitse vuokrattava peli

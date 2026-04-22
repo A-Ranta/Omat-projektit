@@ -1,12 +1,14 @@
 //DOM puu viitaukset
 const lomakeNimiKontti = document.getElementById("lomakeNimiKontti");
 const lomakeEmailKontti = document.getElementById("lomakeEmailKontti");
+const peliValintaKontti = document.getElementById("peliValintaKontti");
 const lomakeTekstikenttäKontti = document.getElementById("lomakeTekstikenttäKontti");
-const lomake = document.getElementById("yhteydenottolomake");
+const tilauslomake = document.getElementById("tilauslomake");
+const yhteydenottolomake = document.getElementById("yhteydenottolomake");
 const submitNappi = document.getElementById("submitNappi");
 
 //"Lähetä" nappi on alussa pois päältä
-submitNappi.disabled = true;
+//submitNappi.disabled = true;
 
 
 /*luo nimisyöte
@@ -70,6 +72,11 @@ function createFormTextareaInput(container) {
     return textarea;
 }*/
 
+//pelivalinnan validointi
+function isGameSelected(value) {
+
+}
+
 
 //tekstikenttäsyötteen validointi
 function isFormTextareaValid(value) {
@@ -79,8 +86,6 @@ function isFormTextareaValid(value) {
     const lengthValid = trimmed.length >= 0 && trimmed.length <= 200;
     const charactersValid = allowedPattern.test(trimmed);
     return lengthValid && charactersValid;
-
-
 }
 
 
@@ -91,10 +96,10 @@ function setInputVisualState(input, state) {
 }
 
 
-//funktio lomakkeen validoinnille
+//funktio yhteydenottolomakkeen validoinnille
 function validateForm() {
-    lomake.addEventListener("input", function () {
-        if (lomake.checkValidity()) {
+    yhteydenottolomake.addEventListener("input", function () {
+        if (yhteydenottolomake.checkValidity()) {
             submitNappi.disabled = false;
             submitNappi.style.background = "green";
         } else {
@@ -104,7 +109,7 @@ function validateForm() {
     });
 
     //estää lomakkeen lähetyksen ja sivun uudelleenlatauksen
-    lomake.addEventListener("submit", function (e) {
+    yhteydenottolomake.addEventListener("submit", function (e) {
         e.preventDefault();
     });
 
