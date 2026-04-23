@@ -31,7 +31,7 @@ function isFormNameValid(value) {
     const allowedPattern = /^[A-Za-z0-9äöåÄÖÅ]{3,25}$/;
     const lengthValid = trimmed.length >= 3 && trimmed.length <= 25;
     const charactersValid = allowedPattern.test(trimmed);
-    return lengthValid && charactersValid
+    return lengthValid && charactersValid;
 }
 
 /*luo sähköpostisyöte
