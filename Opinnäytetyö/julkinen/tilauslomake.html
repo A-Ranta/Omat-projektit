@@ -36,8 +36,6 @@
         </section>
     </header>
 
-    <!--<h2 class="text-3xl font-bold pt-6 pb-6">Katalogi</h2>-->
-
     <!--Main osio pelikatalogille-->
     <main class="container">
 
@@ -50,13 +48,13 @@
 
             <!--Nimisyöte-->
             <section>
-                <label for="nimi">Nimi tai nimimerkkisi</label>
+                <label for="nimi">Nimi</label>
                 <section id="lomakeNimiKontti"></section>
                 <input class="border border-solid border-black" type="text" name="nimi" id="nimi" minlength="3"
-                    maxlength="25" placeholder="Kirjoita nimi tai nimimerkki" pattern="[A-Za-z0-9äöåÄÖÅ]{3,25}"
+                    maxlength="25" placeholder="Kirjoita nimi tai nimimerkki" pattern="[A-Za-zäöåÄÖÅ]{3,25}"
                     required>
                 <p class="text-sm pb-6">
-                    Lisää nimesi tai nimimerkkisi, pituus 3-25 merkkiä, käytä vain kirjaimia ja numeroita
+                    Lisää nimesi, pituus 3-25 merkkiä, käytä vain kirjaimia
                 </p>
             </section>
 
@@ -77,7 +75,7 @@
                 <section id="peliValintaKontti"></section>
                 <select class="border border-solid border-black text-center"
                  name="pelivalinta" id="pelivalinta" required>
-                    <option class="disabled selected hidden">
+                    <option value="" class="disabled selected hidden">
                         Valitse vuokrattava peli
                     </option>
                     <option value="Resident Evil Requiem">Resident Evil Requiem (PS5)</option>
