@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Opinnäytetyö</title>
-    <script src="lomakkeen validointi.js" defer></script>
+    <script src="../javascript/tilauslomakevalidointi.js" defer></script>
 </head>
 
 <body class="flex flex-col text-center items-center">
@@ -49,7 +49,7 @@
             <!--Nimisyöte-->
             <section>
                 <label for="nimi">Nimi</label>
-                <section id="lomakeNimiKontti"></section>
+                <section></section>
                 <input class="border border-solid border-black" type="text" name="nimi" id="nimi" minlength="3"
                     maxlength="25" placeholder="Kirjoita nimi tai nimimerkki" pattern="[A-Za-zäöåÄÖÅ]{3,25}"
                     required>
@@ -61,7 +61,7 @@
             <!--Sähköpostisyöte-->
             <section>
                 <label for="email">Sähköpostiosoite</label>
-                <section id="lomakeEmailKontti"></section>
+                <section></section>
                 <input class="border border-solid border-black" type="email" name="email" id="email"
                     placeholder="esimerkki@email.com" required>
                 <p class="text-sm pb-6">
@@ -72,7 +72,7 @@
             <!--Pelivalinta-->
             <section>
                 <label for="pelivalinta">Pelivalinta</label>
-                <section id="peliValintaKontti"></section>
+                <section></section>
                 <select class="border border-solid border-black text-center"
                  name="pelivalinta" id="pelivalinta" required>
                     <option value="" class="disabled selected hidden">
@@ -91,7 +91,7 @@
                     Valitse haluamasi peli listalta
                 </p>
 
-            <button class="bg-gray-400 rounded w-32" type="submit" id="submitNappi">
+            <button class="bg-gray-400 rounded w-32" type="submit" id="vuokraaNappi">
                 Lähetä
             </button>
 
@@ -131,5 +131,3 @@
     </footer>
 
 </body>
-
-<

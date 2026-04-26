@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <title>Opinnäytetyö</title>
 </head>
 
@@ -42,24 +43,32 @@
         <h2 class="text-3xl font-bold pt-6">Katalogi</h2>
         <p class="pb-6">Tässä pelikatalogimme, päivitämme katalogiamme jatkuvasti</p>
 
-        <section class="grid grid-cols-3">
+        <!--Resident Evil Requiem-->
+        <section class="grid grid-cols-3 peli"
+        data-nimi="Resident Evil Requiem"
+        data-alusta="Playstation 5"
+        data-maara="9">
             
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/re9.jpg" alt="Resident Evil Requiem">
             <section>
-                <p>Resident Evil 9 Requiem</p>
+                <p>Resident Evil Requiem</p>
                 <p>Alusta: Playstation 5</p>
                 <p>Genre: Selviytymiskauhu</p>
             </section>
 
             <section>
                 <!--IndexedDB-->
-                <p>Varastossa ja määrä</p>
+                <p class="maara"></p>
                 <p>10€</p>
                 <a href="tilaussivu.html" class="bg-gray-300">Vuokraa</a>
             </section>
         </section>
 
-        <section class="grid grid-cols-3">
+        <!--Tales Of Berseria-->
+        <section class="grid grid-cols-3 peli"
+        data-nimi="Tales Of Berseria"
+        data-alusta="Playstation 4"
+        data-maara="3">
 
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/tob.jpg" alt="Tales Of Berseria">
             <section>
@@ -69,13 +78,17 @@
             </section>
 
             <section>
-                <p>Varastossa ja määrä</p>
+                <p class="maara"></p>
                 <p>10e</p>
                 <a href="tilaussivu.html" class="bg-gray-300">Vuokraa</a>
             </section>
         </section>
 
-        <section class="grid grid-cols-3">
+        <!--Skate 3-->
+        <section class="grid grid-cols-3 peli"
+        data-nimi="Skate 3"
+        data-alusta="Xbox 360"
+        data-maara="2">
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/skate 3.jpg" alt="Skate 3">
 
             <section>
@@ -85,13 +98,17 @@
             </section>
 
             <section>
-                <p>Varastossa ja määrä</p>
+                <p class="maara"></p>
                 <p>10e</p>
                 <a href="tilaussivu.html" class="bg-gray-300">Vuokraa</a>
             </section>
         </section>
 
-        <section class="grid grid-cols-3">
+        <!--No Sleep For Kaname Date-->
+        <section class="grid grid-cols-3 peli"
+        data-nimi="No Sleep For Kaname Date"
+        data-alusta="Playstation 5"
+        data-maara="6">
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/no sleep for kaname date.png"
                 alt="No Sleep For Kaname Date From AI The Somnium Files">
 
@@ -102,13 +119,17 @@
             </section>
 
             <section>
-                <p>Varastossa ja määrä</p>
+                <p class="maara"></p>
                 <p>10e</p>
                 <a href="tilaussivu.html" class="bg-gray-300">Vuokraa</a>
             </section>
         </section>
 
-        <section class="grid grid-cols-3">
+        <!--Resident Evil 2-->
+        <section class="grid grid-cols-3 peli"
+        data-nimi="Resident Evil 2"
+        data-alusta="Playstation"
+        data-maara="1">
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/re2.jpg" alt="Resident Evil 2 1998">
 
             <section>
@@ -118,13 +139,17 @@
             </section>
 
             <section>
-                <p>Varastossa ja määrä</p>
+                <p class="maara"></p>
                 <p>10e</p>
                 <a href="tilaussivu.html" class="bg-gray-300">Vuokraa</a>
             </section>
         </section>
 
-        <section class="grid grid-cols-3">
+        <!--The Witcher-->
+        <section class="grid grid-cols-3 peli"
+        data-nimi="The Witcher"
+        data-alusta="PC"
+        data-maara="2">
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/witcher 1.jpg" alt="The Witcher Enhanced Edition">
 
             <section>
@@ -134,7 +159,7 @@
             </section>
 
             <section>
-                <p>Varastossa ja määrä</p>
+                <p class="maara"></p>
                 <p>10e</p>
                 <a href="tilaussivu.html" class="bg-gray-300">Vuokraa</a>
             </section>
@@ -171,7 +196,6 @@
         </section>
 
     </footer>
-
+<script src="../tietokanta/indexeddb.js" defer></script>
 </body>
 
-<

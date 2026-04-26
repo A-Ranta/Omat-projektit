@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Opinnäytetyö</title>
-    <script src="lomakkeen validointi.js" defer></script>
+    <script src="../javascript/yhteydenottolomakevalidointi.js" defer></script>
 </head>
 
 
@@ -49,21 +49,21 @@
 
             <!--Nimisyöte-->
             <section>
-                <label for="nimi">Nimi tai nimimerkkisi</label>
-                <section id="lomakeNimiKontti"></section>
+                <label for="nimi">Nimi</label>
+                <section></section>
                 <input class="border border-solid border-black"
                  type="text" name="nimi" id="nimi" minlength="3"
                     maxlength="25" placeholder="Kirjoita nimi tai nimimerkki" pattern="[A-Za-z0-9äöåÄÖÅ]{3,25}"
                     required>
                 <p class="text-sm pb-6">
-                    Lisää nimesi tai nimimerkkisi, pituus 3-25 merkkiä, käytä vain kirjaimia ja numeroita
+                    Lisää nimesi, pituus 3-25 merkkiä, käytä vain kirjaimia
                 </p>
             </section>
 
             <!--Sähköpostisyöte-->
             <section>
                 <label for="email">Sähköpostiosoite</label>
-                <section id="lomakeEmailKontti"></section>
+                <section></section>
                 <input class="border border-solid border-black" type="email" name="email" id="email"
                     placeholder="esimerkki@email.com" required>
                 <p class="text-sm pb-6">
@@ -73,7 +73,7 @@
 
             <!--Tekstikenttäsyöte-->
             <label for="tekstialue">Viesti</label>
-            <section id="lomakeTekstikenttäKontti"></section>
+           
             <textarea class="border border-solid border-black text-center"
              name="tekstialue" id="tekstialue" rows="5" cols="50"
                 maxlength="200" placeholder="Kirjoita viestisi tänne" required></textarea>
@@ -81,7 +81,7 @@
                 Kirjoita viestisi tänne, max 200 kirjainta, käytä vain kirjaimia ja numeroita
             </p>
 
-            <button class="bg-gray-400 rounded w-32" type="submit" id="submitNappi">Lähetä</button>
+            <button class="bg-gray-400 rounded w-32" type="submit" id="lähetäNappi">Lähetä</button>
 
         </form>
     </main>
