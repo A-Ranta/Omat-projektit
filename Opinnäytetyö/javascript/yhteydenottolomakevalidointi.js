@@ -7,7 +7,8 @@ const lomakeTekstiKenttäSyöte = document.getElementById("tekstialue");
 //const tilauslomake = document.getElementById("tilauslomake");
 const yhteydenottolomake = document.getElementById("yhteydenottolomake");
 const lähetäNappi = document.getElementById("lähetäNappi");
-const vuokraaNappi = document.getElementById("vuokraaNappi")
+const vuokraaNappi = document.getElementById("vuokraaNappi");
+const lähetysViesti = document.getElementById("lähetysviesti");
 
 //"Lähetä" nappi on alussa pois päältä
 //lähetäNappi.disabled = true;
@@ -46,10 +47,12 @@ function isGameSelected(value) {
 function isFormTextareaValid(value) {
     const trimmed = value.trim();
 
-    const allowedPattern = /^[a-zA-Z0-9äöåÄÖÅ \,\.\-]+$/;
-    const lengthValid = trimmed.length >= 1 && trimmed.length <= 200;
-    const charactersValid = allowedPattern.test(trimmed);
-    return lengthValid && charactersValid;
+    //const allowedPattern = /^[a-zA-Z0-9äöåÄÖÅ \,\.\-]+$/;
+    //const lengthValid = trimmed.length >= 1 && trimmed.length <= 200;
+    //const charactersValid = allowedPattern.test(trimmed);
+    //return lengthValid && charactersValid;
+
+    return trimmed.length >=1 && trimmed.length <= 200;
 
 }
 
@@ -71,11 +74,11 @@ lomakePeliValintaSyöte.addEventListener("change", function () {
     setInputVisualState(lomakePeliValintaSyöte, valid);
 });*/
 
-/*tekstikenttän validointia ei välttämättä tarvita
+//tekstikenttän validointia ei välttämättä tarvita
 lomakeTekstiKenttäSyöte.addEventListener("input", function () {
     const valid = isFormTextareaValid(lomakeTekstiKenttäSyöte.value);
     setInputVisualState(lomakeTekstiKenttäSyöte, valid);
-});*/
+});
 
 
 
@@ -105,13 +108,22 @@ function validateForm() {
 
         else {
             lähetäNappi.disabled = true;
-            lähetäNappi.style.background = "gray";
+            lähetäNappi.style.background = "red";
         }
     });
 
     //estää lomakkeen lähetyksen ja sivun uudelleenlatauksen
     yhteydenottolomake.addEventListener("submit", function (e) {
         e.preventDefault();
+
+        if (yhteydenottolomake.checkValidity()) {
+            lähetysViesti.classList.remove("hidden");
+            yhteydenottolomake.reset();
+
+            lähetäNappi.disabled = true;
+            lähetäNappi.style.background = "gray";
+        }
+
     });
 
 }

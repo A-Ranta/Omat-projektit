@@ -7,7 +7,8 @@ const lomakePeliValintaSyöte = document.getElementById("pelivalinta");
 const tilauslomake = document.getElementById("tilauslomake");
 //const yhteydenottolomake = document.getElementById("yhteydenottolomake");
 //const lähetäNappi = document.getElementById("lähetäNappi");
-const vuokraaNappi = document.getElementById("vuokraaNappi")
+const vuokraaNappi = document.getElementById("vuokraaNappi");
+const lähetysViesti = document.getElementById("lähetysviesti");
 
 //"Lähetä" nappi on alussa pois päältä
 //lähetäNappi.disabled = true;
@@ -97,11 +98,29 @@ function setInputVisualState(input, valid) {
 
 //funktio yhteydenottolomakkeen validoinnille
 function validateForm() {
-    
+    tilauslomake.addEventListener("input", function () {
+        if (tilauslomake.checkValidity()) {
+            vuokraaNappi.disabled = false;
+            vuokraaNappi.style.background = "green";
+        }
+
+        else {
+            vuokraaNappi.disabled = true;
+            vuokraaNappi.style.background = "red";
+        }
+    });
 
     //estää lomakkeen lähetyksen ja sivun uudelleenlatauksen
     tilauslomake.addEventListener("submit", function (e) {
         e.preventDefault();
+
+        if (tilauslomake.checkValidity()) {
+            lähetysViesti.classList.remove("hidden");
+            tilauslomake.reset();
+
+            vuokraaNappi.disabled = true;
+            vuokraaNappi.style.background = "gray";
+        }
     });
 
 }
