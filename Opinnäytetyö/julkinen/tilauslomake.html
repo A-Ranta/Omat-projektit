@@ -6,14 +6,16 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Opinnäytetyö</title>
+    <!--sallii responsiivisuuden-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opinnäytetyö tilauslomake</title>
     <script src="../javascript/tilauslomakevalidointi.js" defer></script>
 </head>
 
 <body class="flex flex-col text-center items-center">
 
     <!--Header osio-->
-    <header class="container grid grid-cols-3 items-center bg-gray-300">
+    <header class="container grid grid-cols-1 md:grid-cols-3 items-center bg-gray-300">
 
         <!--Logo-->
         <section class="p-10">
@@ -25,7 +27,7 @@
 
         <!--Sivuston infot-->
         <section>
-            <a href="etusivu.html" class="text-5xl font-bold">
+            <a href="etusivu.html" class="text-5xl font-bold hover:underline">
                 GameRent</a>
             <p>Pelaajan valinta</p>
             <nav class="">
@@ -41,7 +43,7 @@
 
         <h2 class="text-3xl font-bold">Tilauslomake</h2>
         <p>Täytä allaoleva tilauslomake saattaksesi vuokraamisen loppuun
-            
+
         </p>
 
         <form class="flex flex-col items-center p-6" id="tilauslomake">
@@ -50,9 +52,8 @@
             <section>
                 <label for="nimi">Nimi</label>
                 <section></section>
-                <input class="border border-solid border-black" type="text" name="nimi" id="nimi" minlength="3"
-                    maxlength="25" placeholder="Kirjoita nimi tai nimimerkki" pattern="[A-Za-zäöåÄÖÅ]{3,25}"
-                    required>
+                <input class="border border-solid border-black text-center" type="text" name="nimi" id="nimi"
+                    minlength="3" maxlength="25" placeholder="Kirjoita nimi" pattern="[A-Za-zäöåÄÖÅ \-]{3,25}" required>
                 <p class="text-sm pb-6">
                     Lisää nimesi, pituus 3-25 merkkiä, käytä vain kirjaimia
                 </p>
@@ -62,7 +63,7 @@
             <section>
                 <label for="email">Sähköpostiosoite</label>
                 <section></section>
-                <input class="border border-solid border-black" type="email" name="email" id="email"
+                <input class="border border-solid border-black text-center" type="email" name="email" id="email"
                     placeholder="esimerkki@email.com" required>
                 <p class="text-sm pb-6">
                     Lisää voimassaoleva sähköpostiosoite
@@ -73,8 +74,8 @@
             <section>
                 <label for="pelivalinta">Pelivalinta</label>
                 <section></section>
-                <select class="border border-solid border-black text-center"
-                 name="pelivalinta" id="pelivalinta" required>
+                <select class="border border-solid border-black text-center" name="pelivalinta" id="pelivalinta"
+                    required>
                     <option value="" class="disabled selected hidden">
                         Valitse vuokrattava peli
                     </option>
@@ -88,8 +89,8 @@
             </section>
 
             <p class="text-sm pb-6">
-                    Valitse haluamasi peli listalta
-                </p>
+                Valitse haluamasi peli listalta
+            </p>
 
             <button class="bg-gray-400 rounded w-32" type="submit" id="vuokraaNappi">
                 Lähetä
@@ -103,7 +104,7 @@
 
 
     <!--Footer osio-->
-    <footer class="container grid grid-cols-3 bg-gray-300">
+    <footer class="container grid grid-cols-1 md:grid-cols-3 bg-gray-300">
 
         <!--Yrityksen tiedot-->
         <section>

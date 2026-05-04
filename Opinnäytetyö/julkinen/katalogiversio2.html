@@ -5,15 +5,16 @@
 
 <head>
     <meta charset="UTF-8">
+    <!--sallii responsiivisuuden-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <title>Opinnäytetyö</title>
+    <title>Opinnäytetyö katalogisivusto</title>
 </head>
 
 <body class="flex flex-col text-center items-center">
 
     <!--Header osio-->
-    <header class="container grid grid-cols-3 items-center bg-gray-300">
+    <header class="container grid grid-cols-1 md:grid-cols-3 items-center bg-gray-300">
 
         <!--Logo-->
         <section class="p-10">
@@ -25,7 +26,7 @@
 
         <!--Sivuston infot-->
         <section>
-            <a href="etusivu.html" class="text-5xl font-bold">
+            <a href="etusivu.html" class="text-5xl font-bold hover:underline">
                 GameRent</a>
             <p>Pelaajan valinta</p>
             <nav class="">
@@ -37,16 +38,14 @@
     </header>
 
     <!--Main osio pelikatalogille-->
-    <main class="divide-y divide-dotted">
+    <main class="">
         <h2 class="text-3xl font-bold pt-6">Katalogi</h2>
         <p class="pb-6">Tässä pelikatalogimme, päivitämme katalogiamme jatkuvasti</p>
 
         <!--Resident Evil Requiem-->
-        <section class="grid grid-cols-3 peli"
-        data-nimi="Resident Evil Requiem"
-        data-alusta="Playstation 5"
-        data-maara="9">
-            
+        <section class="grid grid-cols-1 md:grid-cols-3 peli" data-nimi="Resident Evil Requiem"
+            data-alusta="Playstation 5" data-maara="9">
+
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/re9.jpg" alt="Resident Evil Requiem">
             <section>
                 <p>Resident Evil Requiem</p>
@@ -63,10 +62,8 @@
         </section>
 
         <!--Tales Of Berseria-->
-        <section class="grid grid-cols-3 peli"
-        data-nimi="Tales Of Berseria"
-        data-alusta="Playstation 4"
-        data-maara="3">
+        <section class="grid grid-cols-1 md:grid-cols-3 peli" data-nimi="Tales Of Berseria" data-alusta="Playstation 4"
+            data-maara="3">
 
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/tob.jpg" alt="Tales Of Berseria">
             <section>
@@ -83,10 +80,7 @@
         </section>
 
         <!--Skate 3-->
-        <section class="grid grid-cols-3 peli"
-        data-nimi="Skate 3"
-        data-alusta="Xbox 360"
-        data-maara="2">
+        <section class="grid grid-cols-1 md:grid-cols-3 peli" data-nimi="Skate 3" data-alusta="Xbox 360" data-maara="2">
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/skate 3.jpg" alt="Skate 3">
 
             <section>
@@ -103,10 +97,8 @@
         </section>
 
         <!--No Sleep For Kaname Date-->
-        <section class="grid grid-cols-3 peli"
-        data-nimi="No Sleep For Kaname Date"
-        data-alusta="Playstation 5"
-        data-maara="6">
+        <section class="grid grid-cols-1 md:grid-cols-3 peli" data-nimi="No Sleep For Kaname Date"
+            data-alusta="Playstation 5" data-maara="6">
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/no sleep for kaname date.png"
                 alt="No Sleep For Kaname Date From AI The Somnium Files">
 
@@ -124,10 +116,8 @@
         </section>
 
         <!--Resident Evil 2-->
-        <section class="grid grid-cols-3 peli"
-        data-nimi="Resident Evil 2"
-        data-alusta="Playstation"
-        data-maara="1">
+        <section class="grid grid-cols-1 md:grid-cols-3 peli" data-nimi="Resident Evil 2" data-alusta="Playstation"
+            data-maara="1">
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/re2.jpg" alt="Resident Evil 2 1998">
 
             <section>
@@ -144,10 +134,7 @@
         </section>
 
         <!--The Witcher-->
-        <section class="grid grid-cols-3 peli"
-        data-nimi="The Witcher"
-        data-alusta="PC"
-        data-maara="2">
+        <section class="grid grid-cols-1 md:grid-cols-3 peli" data-nimi="The Witcher" data-alusta="PC" data-maara="2">
             <img class="w-40 h-40" src="/Opinnäytetyö/kuvat/witcher 1.jpg" alt="The Witcher Enhanced Edition">
 
             <section>
@@ -167,7 +154,7 @@
 
 
     <!--Footer osio-->
-    <footer class="container grid grid-cols-3 bg-gray-300">
+    <footer class="container grid grid-cols-1 md:grid-cols-3 bg-gray-300">
 
         <!--Yrityksen tiedot-->
         <section>
@@ -194,6 +181,5 @@
         </section>
 
     </footer>
-<script src="../tietokanta/indexeddb.js" defer></script>
+    <script src="../tietokanta/indexeddb.js" defer></script>
 </body>
-

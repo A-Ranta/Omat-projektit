@@ -52,7 +52,7 @@ function isFormTextareaValid(value) {
     //const charactersValid = allowedPattern.test(trimmed);
     //return lengthValid && charactersValid;
 
-    return trimmed.length >=1 && trimmed.length <= 200;
+    return trimmed.length >= 1 && trimmed.length <= 200;
 
 }
 

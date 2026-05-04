@@ -18,11 +18,10 @@ const lähetysViesti = document.getElementById("lähetysviesti");
 function isFormNameValid(value) {
     const trimmed = value.trim();
 
-    const allowedPattern = /^[a-zA-ZäöåÄÖÅ \,\.\-]+$/;
+    const allowedPattern = /^[a-zA-ZäöåÄÖÅ\-]+$/;
     const lengthValid = trimmed.length >= 3 && trimmed.length <= 25;
     const charactersValid = allowedPattern.test(trimmed);
     return lengthValid && charactersValid;
-
 }
 
 //sähköpostin validointi validointi
@@ -37,8 +36,6 @@ function isFormEmailValid(value) {
 //pelivalinnan validointi
 function isGameSelected(value) {
     return value !== "";
-
-
 }
 
 

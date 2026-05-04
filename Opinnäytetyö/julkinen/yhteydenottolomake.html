@@ -6,7 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Opinnäytetyö</title>
+    <!--sallii responsiivisuuden-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opinnäytetyö yhteydenottolomake</title>
     <script src="../javascript/yhteydenottolomakevalidointi.js" defer></script>
 </head>
 
@@ -15,7 +17,7 @@
 <body class="flex flex-col text-center items-center">
 
     <!--Header osio-->
-    <header class="container grid grid-cols-3 items-center bg-gray-300">
+    <header class="container grid grid-cols-1 md:grid-cols-3 items-center bg-gray-300">
 
         <!--Logo-->
         <section class="p-10">
@@ -27,9 +29,9 @@
 
         <!--Sivuston infot-->
         <section>
-            <a href="etusivu.html" class="text-5xl font-bold">
+            <a href="etusivu.html" class="text-5xl font-bold hover:underline">
                 GameRent</a>
-            <p class="pb-6">Pelaajan valinta</p>
+            <p>Pelaajan valinta</p>
             <nav class="">
                 <a href="katalogiversio2.html" class="inline-block hover:underline text-gray bg-blue-100 rounded w-32">
                     Katalogi
@@ -51,10 +53,8 @@
             <section>
                 <label for="nimi">Nimi</label>
                 <section></section>
-                <input class="border border-solid border-black"
-                 type="text" name="nimi" id="nimi" minlength="3"
-                    maxlength="25" placeholder="Kirjoita nimi tai nimimerkki" pattern="[A-Za-z0-9äöåÄÖÅ]{3,25}"
-                    required>
+                <input class="border border-solid border-black text-center" type="text" name="nimi" id="nimi"
+                    minlength="3" maxlength="25" placeholder="Kirjoita nimi" pattern="[A-Za-z0-9äöåÄÖÅ]{3,25}" required>
                 <p class="text-sm pb-6">
                     Lisää nimesi, pituus 3-25 merkkiä, käytä vain kirjaimia
                 </p>
@@ -64,8 +64,8 @@
             <section>
                 <label for="email">Sähköpostiosoite</label>
                 <section></section>
-                <input class="border border-solid border-black" type="email" name="email" id="email"
-                    placeholder="esimerkki@email.com" required>
+                <input class="border border-solid border-black text-center
+                 type=" email" name="email" id="email" placeholder="esimerkki@email.com" required>
                 <p class="text-sm pb-6">
                     Lisää voimassaoleva sähköpostiosoite
                 </p>
@@ -73,10 +73,9 @@
 
             <!--Tekstikenttäsyöte-->
             <label for="tekstialue">Viesti</label>
-           
-            <textarea class="border border-solid border-black text-center"
-             name="tekstialue" id="tekstialue" rows="5" cols="50"
-                maxlength="200" placeholder="Kirjoita viestisi tänne" required></textarea>
+
+            <textarea class="border border-solid border-black text-center" name="tekstialue" id="tekstialue" rows="5"
+                cols="50" maxlength="200" placeholder="Kirjoita viestisi tänne" required></textarea>
             <p class="text-sm pb-6">
                 Kirjoita viestisi tänne, max 200 kirjainta, tekstikentässä numerot ja erikoismerkit sallittu
             </p>
@@ -91,7 +90,7 @@
 
 
     <!--Footer osio-->
-    <footer class="container grid grid-cols-3 bg-gray-300">
+    <footer class="container grid grid-cols-1 md:grid-cols-3 bg-gray-300">
 
         <!--Yrityksen tiedot-->
         <section>
