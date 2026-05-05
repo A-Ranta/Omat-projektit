@@ -104,6 +104,7 @@ function validateForm() {
         else {
             vuokraaNappi.disabled = true;
             vuokraaNappi.style.background = "red";
+            
         }
     });
 
