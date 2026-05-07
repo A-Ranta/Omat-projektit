@@ -47,12 +47,15 @@ function isGameSelected(value) {
 function isFormTextareaValid(value) {
     const trimmed = value.trim();
 
+    const lengthValid = trimmed.length >= 1 && trimmed.length <= 200;
+    //estää suurimman osan HTML syötteistä <script></script>
+    const denyHTMLtags = !/<[^>]*>/.test(trimmed);
     //const allowedPattern = /^[a-zA-Z0-9äöåÄÖÅ \,\.\-]+$/;
     //const lengthValid = trimmed.length >= 1 && trimmed.length <= 200;
     //const charactersValid = allowedPattern.test(trimmed);
     //return lengthValid && charactersValid;
-
-    return trimmed.length >= 1 && trimmed.length <= 200;
+    //return trimmed.length >= 1 && trimmed.length <= 200;
+    return lengthValid && denyHTMLtags;
 
 }
 
@@ -97,18 +100,29 @@ function setInputVisualState(input, valid) {
 
 }
 
+//tarkistaa kaikki lomakkeen syötekenttien arvon
+function isFormValid() {
+    return (
+        isFormNameValid(lomakeNimiSyöte.value) &&
+        isFormEmailValid(lomakeEmailSyöte.value) &&
+        isFormTextareaValid(lomakeTekstiKenttäSyöte.value)
+    );
+}
 
-//funktio yhteydenottolomakkeen validoinnille
+
+//funktio yhteydenottolomakkeen validoinnille ja lähetä-napin sallimiselle
 function validateForm() {
     yhteydenottolomake.addEventListener("input", function () {
-        if (yhteydenottolomake.checkValidity()) {
+        if (yhteydenottolomake.checkValidity() && isFormValid()) {
             lähetäNappi.disabled = false;
             lähetäNappi.style.background = "green";
+            lähetäNappi.style.cursor ="pointer";
         }
 
         else {
             lähetäNappi.disabled = true;
             lähetäNappi.style.background = "red";
+            lähetäNappi.style.cursor = "not-allowed";
         }
     });
 
@@ -116,7 +130,7 @@ function validateForm() {
     yhteydenottolomake.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        if (yhteydenottolomake.checkValidity()) {
+        if (yhteydenottolomake.checkValidity() && isFormValid()) {
             lähetysViesti.classList.remove("hidden");
             yhteydenottolomake.reset();
 

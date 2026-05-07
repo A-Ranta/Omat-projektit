@@ -99,12 +99,13 @@ function validateForm() {
         if (tilauslomake.checkValidity()) {
             vuokraaNappi.disabled = false;
             vuokraaNappi.style.background = "green";
+            vuokraaNappi.style.cursor ="pointer";
         }
 
         else {
             vuokraaNappi.disabled = true;
             vuokraaNappi.style.background = "red";
-            
+            vuokraaNappi.style.cursor = "not-allowed";
         }
     });
 
